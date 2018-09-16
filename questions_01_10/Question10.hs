@@ -14,7 +14,13 @@ main = hspec $ do
       it "\"aaaa\" -> " $ getCount "aaaa" `shouldBe` (4, 'a')
 
   describe "encode" $ do
-    it "\"aaaabc\" -> " $ encode "aaaabc" `shouldBe` [(4, 'a'), (1, 'b'), (1, 'c')]
-    it "\"\" -> \"\"" $ encode "" `shouldBe` []
-    it "\"ab\" -> \"a\"" $ encode "ab" `shouldBe`[(1, 'a'), (1, 'b')]
-    it "\"a\" -> \"a\"" $ encode "a" `shouldBe` [(1, 'a')]
+    it "\"aaaabc\" -> " $
+        encode "aaaabc" `shouldBe` [(4, 'a'), (1, 'b'), (1, 'c')]
+    it "some test -> " $
+        encode "aaaabccaadeeee" `shouldBe` [(4,'a'),(1,'b'),(2,'c'),(2,'a'),(1,'d'),(4,'e')]
+    it "\"\" -> \"\"" $
+        encode "" `shouldBe` []
+    it "\"ab\" -> \"a\"" $
+        encode "ab" `shouldBe`[(1, 'a'), (1, 'b')]
+    it "\"a\" -> \"a\"" $
+        encode "a" `shouldBe` [(1, 'a')]
