@@ -46,3 +46,4 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - 99Questions
+    - hspec

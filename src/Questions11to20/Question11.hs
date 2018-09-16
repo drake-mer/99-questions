@@ -1,26 +1,13 @@
+module Questions11to20.Question11 where
+
+import Data.List
 import qualified Questions01to10.Question09 (pack)
-import Test.Hspec
 
-encode :: Eq a => [a] -> [(Int, a)]
-encode = (map getCount) . Questions01to10.Question09.pack
+data EncodedSymbol a = Single a | Count Int a deriving (Show, Eq)
 
-getCount :: [a] -> (Int, a)
-getCount (x:xs) = ((length (x:xs)), x)
-getCount [] = undefined -- should never occur if consistency is up there
+encode :: Eq a => [a] -> [EncodedSymbol a]
+encode = (map codeLetter) . Questions01to10.Question09.pack
 
-main :: IO ()
-main = hspec $ do
-  describe "getCount" $ do
-      it "\"aaaa\" -> " $ getCount "aaaa" `shouldBe` (4, 'a')
-
-  describe "encode" $ do
-    it "\"aaaabc\" -> " $
-        encode "aaaabc" `shouldBe` [(4, 'a'), (1, 'b'), (1, 'c')]
-    it "some test -> " $
-        encode "aaaabccaadeeee" `shouldBe` [(4,'a'),(1,'b'),(2,'c'),(2,'a'),(1,'d'),(4,'e')]
-    it "\"\" -> \"\"" $
-        encode "" `shouldBe` []
-    it "\"ab\" -> \"a\"" $
-        encode "ab" `shouldBe`[(1, 'a'), (1, 'b')]
-    it "\"a\" -> \"a\"" $
-        encode "a" `shouldBe` [(1, 'a')]
+codeLetter :: Eq a => [a] -> EncodedSymbol a
+codeLetter (x:xs) = if null xs then (Single x) else (Count ((length xs) + 1) x)
+codeLetter [] = undefined -- should never occur if consistency is up there

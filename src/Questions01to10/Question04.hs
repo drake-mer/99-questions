@@ -1,3 +1,4 @@
+module Questions01to10.Question04 where 
 
 -- naive implementation
 listLength :: [a] -> Integer
@@ -6,5 +7,5 @@ listLength list = listLength' 0 list
          listLength' x [] = x
 
 -- alternative implementation
-listLength :: [a] -> Integer
-listLength = foldr (\_ y -> y + 1) 0
+listLengthAlt :: [a] -> Integer
+listLengthAlt = foldr (\_ y -> y + 1) 0
