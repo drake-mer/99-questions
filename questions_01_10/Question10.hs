@@ -1,8 +1,8 @@
-import Question09 (pack)
+import qualified Question09 (pack)
 import Test.Hspec
 
 encode :: Eq a => [a] -> [(Int, a)]
-encode = (map getCount) . pack
+encode = (map getCount) . Question09.pack
 
 getCount :: [a] -> (Int, a)
 getCount (x:xs) = ((length (x:xs)), x)
