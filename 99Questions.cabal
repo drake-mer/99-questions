@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e32324ccdec35e100830d78b82286d85d0fb1320aa783eba52d17ce496627af7
+-- hash: 4ebd78afe51cbe632ae5d61dac1a9fb6d4630056e55120e5c01577f77213c896
 
 name:           99Questions
 version:        0.1.0.0
@@ -38,6 +38,16 @@ library
       Questions01to10.Question09
       Questions01to10.Question10
       Questions11to20.Question11
+      Questions11to20.Question12
+      Questions11to20.Question13
+      Questions11to20.Question14
+      Questions11to20.Question15
+      Questions11to20.Question16
+      Questions11to20.Question17
+      Questions11to20.Question18
+      Questions11to20.Question19
+      Questions11to20.Question20
+      Questions21to28
   other-modules:
       Paths_99Questions
   hs-source-dirs:
