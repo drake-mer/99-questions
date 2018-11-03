@@ -24,6 +24,8 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+  - random
 
 executables:
   99Questions-exe:
@@ -47,5 +49,5 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - 99Questions
-    - random
     - hspec
+    - random

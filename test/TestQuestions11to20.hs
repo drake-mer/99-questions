@@ -21,8 +21,9 @@ testQuestion11 = Test.Hspec.hspec $ do
 
 testQuestion12 :: IO ()
 testQuestion12 = Test.Hspec.hspec $ do
-  it "decodeModified [(Count 4 'a'), (Single 'b')]" $ do
+  it "decodeModified [(Count 4 'a'), (Single 'b')]" $ do 
       decodeModified [(Count 4 'a'), (Single 'b')] `shouldBe` "aaaab"
-  it "decodeModified [(Single 'c'), (Single 'b')]" $ do
+  it "decodeModified [(Single 'c'), (Single 'b')]" $ do 
       decodeModified [(Single 'c'), (Single 'b')] `shouldBe` "cb"
   it "decodeModified []" $ do decodeModified [] `shouldBe` ""
+

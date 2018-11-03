@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: db00fd96ea4f07c1410dffdf4712707fef8d2122ab8505296eea02f917bf16cf
+-- hash: 0ddc13a4b897b8bab599d795cd2a01500bcd4c6bb684ff1604fd1a68325d2e3b
 
 name:           99Questions
 version:        0.1.0.0
@@ -47,13 +47,14 @@ library
       Questions11to20.Question18
       Questions11to20.Question19
       Questions11to20.Question20
-      Questions21to28
+      Questions21to30
   other-modules:
       Paths_99Questions
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , random
   default-language: Haskell2010
 
 executable 99Questions-exe
@@ -75,6 +76,7 @@ test-suite 99Questions-test
   other-modules:
       TestQuestions01to10
       TestQuestions11to20
+      TestQuestions21to30
       Paths_99Questions
   hs-source-dirs:
       test
