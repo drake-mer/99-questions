@@ -65,8 +65,8 @@ rnd_permu g input = output
 --
 -- Combination of K distinct Objects From N Elements In A list
 combinations :: Int -> [a] -> [[a]]
-combinations n input = combinations' n input []
-
-combinations' :: Int -> [a] -> [[a]] -> [[a]]
-combinations' n input accumulator = undefined
-
+combinations _ [] = [[]]
+combinations 0 _  = [[]]
+combinations k (x:xs) = x_start ++ others
+    where x_start = [ x : rest | rest <- combinations (k-1) xs ]
+          others  = if k <= length xs then combinations k xs else []
